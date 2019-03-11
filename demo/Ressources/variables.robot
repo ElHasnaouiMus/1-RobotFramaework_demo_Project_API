@@ -1,9 +1,12 @@
 *** Variables ***
-${username} =	yasser
-${password} =   Octave01-
+${username} =	Mustaph
+${password} =   ml
 ${sign_up_label} =  //label[@for="tab-2"]
-${champ_username} =  xpath=(//input[@name="username"])[2]
-${champ_password} =  xpath=(//input[@name="password"])[2]
+${champ_username_signup} =  xpath=(//input[@name="username"])[2]
+${champ_username_login} =  //input[@name="username"]
+${champ_password_signup} =  xpath=(//input[@name="password"])[2]
+${champ_password_login} =  //input[@name="password"]
 ${champ2_password} =  //input[@id="pass"]
 ${signup_button} =  xpath=(//input[@class="button"])[2]
-${website_url} =   http://localhost/demo/api/user
+${login_button} =  //input[@class="button"]
+${website_link} =   http://localhost/demo/api/user
