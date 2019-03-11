@@ -11,13 +11,10 @@ Remplir le formulaire d'inscription
     Input Text    ${champ2_password}    ${password}
     Click Element    ${signup_button}
 
-Vérifier qu'il est bien ajouté dans le statut JSON
+Vérifier que "Successfully Signup!" est affiché dans le status JSON
     sleep  2s
     page should contain  "Successfully Signup!"
 
-Remplir encore une fois le formulaire d'inscription avec les mèmes les coordonnées
-    Remplir le formulaire d'inscription
-
-Vérifier que ça donne déja inscri dans le status JSON
+Vérifier que "Username already exists!" est affiché dans le status JSON
     sleep  2s
     page should contain  "Username already exists!"

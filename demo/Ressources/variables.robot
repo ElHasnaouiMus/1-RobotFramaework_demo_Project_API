@@ -6,4 +6,5 @@ ${champ_username} =  xpath=(//input[@name="username"])[2]
 ${champ_password} =  xpath=(//input[@name="password"])[2]
 ${champ2_password} =  //input[@id="pass"]
 ${signup_button} =  xpath=(//input[@class="button"])[2]
+${login_button} =  //input[@class="button"]
 ${website_link} =   http://localhost/demo/api/user
