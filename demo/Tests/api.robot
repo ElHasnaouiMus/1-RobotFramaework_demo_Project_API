@@ -23,7 +23,7 @@ Vérifier la connection au site web
 Vérifier l'existence du nom d'utilisateur et mot de passe
     LoginBack.Verify Successfull Login DataBase
 
-#Inscrire un utilisateur
+#Inscrire un utilisateu
 #    signup.Vérifier qu'il n'existe pas dans la base de donnée
 #    signup.Remplir le formulaire d'inscription
 #    signup.Vérifier si il'est ajouté dans le status dans JSON

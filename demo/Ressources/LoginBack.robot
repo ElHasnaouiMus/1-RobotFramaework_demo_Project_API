@@ -6,7 +6,7 @@ Resource  variables.robot
 *** Variables ***
 
 *** Keywords ***
-Verify Successfull Login Request
+Verify Successful Login Request
 
     Create Session  session1  ${website_url}
 
