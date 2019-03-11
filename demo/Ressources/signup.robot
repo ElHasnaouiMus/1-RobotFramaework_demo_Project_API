@@ -22,7 +22,10 @@ Vérifier si il'est ajouté dans le status dans JSON
 
 Vérifier si il'est ajouté sur la base de données
 
-    Row Count Is Equal To X	    select id from users where username = '${username}' and password = md5('${password}')   1
+    Row Count Is Equal To X	    select id from users where username = '${username}' and password = md5('${password}')  1
+
+Vérifier Requete Http Post
+    Create Session
 
 Suprimmer l'utilisateur de test depuis la base de donnée
     Connect To Database Using Custom Params  pymysql  database='demo', user='root', password='', host='localhost'
