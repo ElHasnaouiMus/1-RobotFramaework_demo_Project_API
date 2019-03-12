@@ -15,9 +15,9 @@ Verify Post Request
 
     &{data} =   Create Dictionary  username=${username}  password=md5('${password}')
 
-    Log  ${data}
+    &{headers}=  Create Dictionary  Content-Type=application/x-www-form-urlencoded
 
-    ${response} =  Post Request  session2  signup.php  data=${data}
+    ${response} =  Post Request  session2  signup.php  data=${data}  headers=${headers}
 
     Should Be Equal As Strings  ${response.status_code}  200
 
