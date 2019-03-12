@@ -1,6 +1,6 @@
 *** Variables ***
-${username} =  Mustaph
-${password} =  ml
+${username} =	TestUser
+${password} =   Testpassword
 ${sign_up_label} =  //label[@for="tab-2"]
 ${champ_username_signup} =  xpath=(//input[@name="username"])[2]
 ${champ_username_login} =  //input[@name="username"]
