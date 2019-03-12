@@ -10,3 +10,4 @@ ${champ2_password} =  //input[@id="pass"]
 ${signup_button} =  xpath=(//input[@class="button"])[2]
 ${login_button} =  //input[@class="button"]
 ${website_link} =   http://localhost/demo/api/user
+${main_page} =  http://localhost/demo/
