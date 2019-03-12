@@ -18,29 +18,34 @@ Resource  ../Ressources/LoginBack.robot
 
 Vérifier la connection au site web
     [Tags]  First
-    LoginBack.Verify Successfull Login Request
+    LoginBack.Verifier Utilisateur Dans BD
+    LoginBack.Test Login Utilisateur Existant
 
-Vérifier l'existence du nom d'utilisateur et mot de passe
+
+Connexion apres suppression Utilisateur
     [Tags]  First
-    LoginBack.Verify Successfull Login DataBase
-
-Vérifier connexion apres suppression du User
-    [Tags]  First
-    LoginBack.Delete User From DataBase
-    LoginBack.Verify Login Request After Delete
+    LoginBack.Supprimer Utilisateur De BD
+    LoginBack.Test Login Utilisateur Non Existant
 
 
 
-Vérifier l'existence du user dans la BD
-    [Tags]  Second
-    SignupBack.Verify User Not In Database
 
 Vérifier la requete POST
     [Tags]  Second
-    SignupBack.Verify Post Request
+    SignupBack.Utilisateur Non Existant BD
+    SignupBack.Requete Http POST
 
-Vérifier la BD
+Ajout de Utilisateur dans la BD
     [Tags]  Second
-    SignupBack.Verify User Added Successfully To Database
+    SignupBack.Ajout Utilisateur dans la BD
+
+Tester Duplication
+    [Tags]  Third
+    SignupBack.Requete POST Utilisateur dupliqué
+    SignupBack.Test Utilisateur non duplique BD
+
+
+
+
 
 

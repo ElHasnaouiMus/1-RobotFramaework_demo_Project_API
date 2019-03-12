@@ -6,7 +6,7 @@ Resource  variables.robot
 *** Variables ***
 
 *** Keywords ***
-Verify Successfull Login Request
+Test Login Utilisateur Existant
 
     Create Session  session1  ${website_link}
 
@@ -20,7 +20,7 @@ Verify Successfull Login Request
 
     Should Be Equal As Strings  ${json['message']}  Successfully Login!
 
-Verify Successfull Login DataBase
+Verifier Utilisateur Dans BD
 
     Connect To Database Using Custom Params  pymysql  database='demo', user='root', password='', host='localhost'
 
@@ -29,7 +29,7 @@ Verify Successfull Login DataBase
 #Trying to Login after the user have been deleted
 
 #We first delete the user
-Delete User From DataBase
+Supprimer Utilisateur De BD
 
     Connect To Database Using Custom Params  pymysql  database='demo', user='root', password='', host='localhost'
 
@@ -38,7 +38,7 @@ Delete User From DataBase
     Disconnect from Database
 
 #Then we try to Login
-Verify Login Request After Delete
+Test Login Utilisateur Non Existant
 
     Create Session  session1  ${website_link}
 
@@ -48,7 +48,7 @@ Verify Login Request After Delete
 
     Should Be Equal As Strings  ${response.status_code}	200
 
-    Should Be Equal As Strings  ${json['message']}  Successfully Login!
+    Should Be Equal As Strings  ${json['message']}  Invalid Username or Password!
 
 
 
