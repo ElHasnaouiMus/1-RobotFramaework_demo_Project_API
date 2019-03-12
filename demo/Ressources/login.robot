@@ -5,11 +5,11 @@ Resource  ../Ressources/variables.robot
 *** Keywords ***
 
 Vérifier la réponse HTTP
-    Create Session	demo	${website_link}
-    ${resp}=	Get Request	demo  /
-    Should Be Equal As Strings	${resp.status_code}	200
+    Create Session	demo	${WEBSITE_LINK}
+    ${response}=	Get Request	demo  /
+    Should Be Equal As Strings	${response.status_code}	200
 
-conecter l'utilisateur de test
+connecter l'utilisateur de test
      ${resp}=	Get Request  demo  /login.php?username=${username}&password=${password}
      log  ${resp.json()}
      Dictionary Should Contain Value  ${resp.json()}  Successfully Login!
