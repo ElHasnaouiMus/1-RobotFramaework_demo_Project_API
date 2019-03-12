@@ -4,7 +4,7 @@ Resource    variables.robot
 
 *** Keywords ***
 
-Clicker sur le label sign up
+Cliquez sur le champ sign up
     Click Element    ${sign_up_label}
 
 Remplir le formulaire d'inscription
@@ -12,7 +12,7 @@ Remplir le formulaire d'inscription
     Input Text    ${champ_password_signup}    ${password}
     Input Text    ${champ2_password}    ${password}
 
-Clicker sur le button sign up
+Cliquez sur le button sign up
     Click Element    ${signup_button}
 
 Vérifier que "Successfully Signup!" est affiché dans le status

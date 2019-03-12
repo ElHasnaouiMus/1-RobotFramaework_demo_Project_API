@@ -13,9 +13,9 @@ Vérifier si l'utilisateur n'existe pas dans la BD
 Tester l'inscription de l'utilisateur par une requete Http POST
     Create Session  session2  ${website_link}
 
-    &{data} =   Create Dictionary  username=${username}  password=${password}
+    ${data} =   Create Dictionary  username=${username}  password=${password}
 
-    &{headers}=  Create Dictionary  Content-Type=application/x-www-form-urlencoded
+    ${headers}=  Create Dictionary  Content-Type=application/x-www-form-urlencoded
 
     ${response} =  Post Request  session2  signup.php  data=${data}  headers=${headers}
 
@@ -38,9 +38,9 @@ Vérifier que l'utilisateur est ajoute dans la BD
 Tester l'inscription du meme utilisateur par une requete Http POST
     Create Session  session2  ${website_link}
 
-    &{data} =   Create Dictionary  username=${username}  password=${password}
+    ${data} =   Create Dictionary  username=${username}  password=${password}
 
-    &{headers}=  Create Dictionary  Content-Type=application/x-www-form-urlencoded
+    ${headers}=  Create Dictionary  Content-Type=application/x-www-form-urlencoded
 
     ${response} =  Post Request  session2  signup.php  data=${data}  headers=${headers}
 
