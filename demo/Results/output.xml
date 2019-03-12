@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.1 (Python 3.6.7 on win32)" generated="20190312 14:37:23.438" rpa="false">
+<robot generator="Robot 3.1.1 (Python 3.6.7 on win32)" generated="20190312 15:54:23.261" rpa="false">
 <suite id="s1" name="Api" source="C:\development\robot-scripts\1-RobotFramaework_demo_Project_API\demo\Tests\api.robot">
-<test id="s1-t1" name="Tester Duplication">
-<kw name="Requete POST Utilisateur dupliqué" library="SignupBack">
+<test id="s1-t1" name="Inscrire un utilisateur deja present dans la BD">
+<kw name="Tester l'inscription du meme utilisateur par une requete Http POST" library="SignupBack">
 <kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>session2</arg>
 <arg>${website_link}</arg>
 </arguments>
-<msg timestamp="20190312 14:37:23.904" level="INFO">Creating Session using : alias=session2, url=http://localhost/demo/api/user, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20190312 14:37:23.904" endtime="20190312 14:37:23.904"></status>
+<msg timestamp="20190312 15:54:23.698" level="INFO">Creating Session using : alias=session2, url=http://localhost/demo/api/user, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190312 15:54:23.698" endtime="20190312 15:54:23.698"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -21,8 +21,8 @@
 <assign>
 <var>&amp;{data}</var>
 </assign>
-<msg timestamp="20190312 14:37:23.904" level="INFO">&amp;{data} = { username=Mustaph | password=ml }</msg>
-<status status="PASS" starttime="20190312 14:37:23.904" endtime="20190312 14:37:23.904"></status>
+<msg timestamp="20190312 15:54:23.698" level="INFO">&amp;{data} = { username=TestUser | password=Testpassword }</msg>
+<status status="PASS" starttime="20190312 15:54:23.698" endtime="20190312 15:54:23.698"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -32,8 +32,8 @@
 <assign>
 <var>&amp;{headers}</var>
 </assign>
-<msg timestamp="20190312 14:37:23.904" level="INFO">&amp;{headers} = { Content-Type=application/x-www-form-urlencoded }</msg>
-<status status="PASS" starttime="20190312 14:37:23.904" endtime="20190312 14:37:23.904"></status>
+<msg timestamp="20190312 15:54:23.698" level="INFO">&amp;{headers} = { Content-Type=application/x-www-form-urlencoded }</msg>
+<status status="PASS" starttime="20190312 15:54:23.698" endtime="20190312 15:54:23.698"></status>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <doc>Send a POST request on the session object found using the
@@ -47,9 +47,9 @@ given `alias`</doc>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20190312 14:37:23.905" level="INFO">Post Request using : alias=session2, uri=signup.php, data=username=Mustaph&amp;password=ml, headers={'Content-Type': 'application/x-www-form-urlencoded'}, files=None, allow_redirects=True </msg>
-<msg timestamp="20190312 14:37:23.905" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20190312 14:37:23.904" endtime="20190312 14:37:23.905"></status>
+<msg timestamp="20190312 15:54:23.714" level="INFO">Post Request using : alias=session2, uri=signup.php, data=username=TestUser&amp;password=Testpassword, headers={'Content-Type': 'application/x-www-form-urlencoded'}, files=None, allow_redirects=True </msg>
+<msg timestamp="20190312 15:54:23.714" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190312 15:54:23.698" endtime="20190312 15:54:23.714"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -59,8 +59,8 @@ given `alias`</doc>
 <assign>
 <var>${json}</var>
 </assign>
-<msg timestamp="20190312 14:37:23.905" level="INFO">${json} = {'status': False, 'message': 'Username already exists!'}</msg>
-<status status="PASS" starttime="20190312 14:37:23.905" endtime="20190312 14:37:23.905"></status>
+<msg timestamp="20190312 15:54:23.714" level="INFO">${json} = {'status': False, 'message': 'Username already exists!'}</msg>
+<status status="PASS" starttime="20190312 15:54:23.714" endtime="20190312 15:54:23.714"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
@@ -68,10 +68,10 @@ given `alias`</doc>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 </arguments>
-<msg timestamp="20190312 14:37:23.905" level="INFO">Argument types are:
+<msg timestamp="20190312 15:54:23.714" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20190312 14:37:23.905" endtime="20190312 14:37:23.905"></status>
+<status status="PASS" starttime="20190312 15:54:23.714" endtime="20190312 15:54:23.714"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
@@ -79,11 +79,11 @@ given `alias`</doc>
 <arg>${json['message']}</arg>
 <arg>Username already exists!</arg>
 </arguments>
-<status status="PASS" starttime="20190312 14:37:23.905" endtime="20190312 14:37:23.905"></status>
+<status status="PASS" starttime="20190312 15:54:23.714" endtime="20190312 15:54:23.714"></status>
 </kw>
-<status status="PASS" starttime="20190312 14:37:23.904" endtime="20190312 14:37:23.905"></status>
+<status status="PASS" starttime="20190312 15:54:23.698" endtime="20190312 15:54:23.714"></status>
 </kw>
-<kw name="Test Utilisateur non duplique BD" library="SignupBack">
+<kw name="Verifier que l'utilisateur n'est pas duplique dans la BD" library="SignupBack">
 <kw name="Connect To Database Using Custom Params" library="DatabaseLibrary">
 <doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
 connect to the database using the map string `db_custom_param_string`.</doc>
@@ -91,8 +91,8 @@ connect to the database using the map string `db_custom_param_string`.</doc>
 <arg>pymysql</arg>
 <arg>database='demo', user='root', password='', host='localhost'</arg>
 </arguments>
-<msg timestamp="20190312 14:37:23.958" level="INFO">Executing : Connect To Database Using Custom Params : pymysql.connect(db_api_2.connect(database='demo', user='root', password='', host='localhost')) </msg>
-<status status="PASS" starttime="20190312 14:37:23.905" endtime="20190312 14:37:23.973"></status>
+<msg timestamp="20190312 15:54:23.745" level="INFO">Executing : Connect To Database Using Custom Params : pymysql.connect(db_api_2.connect(database='demo', user='root', password='', host='localhost')) </msg>
+<status status="PASS" starttime="20190312 15:54:23.714" endtime="20190312 15:54:23.776"></status>
 </kw>
 <kw name="Row Count Is Equal To X" library="DatabaseLibrary">
 <doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
@@ -102,18 +102,18 @@ transaction commit or rollback.</doc>
 <arg>select id from users where username = '${username}' and password = md5('${password}')</arg>
 <arg>1</arg>
 </arguments>
-<msg timestamp="20190312 14:37:23.973" level="INFO">Executing : Row Count Is Equal To X  |  select id from users where username = 'Mustaph' and password = md5('ml')  |  1 </msg>
-<msg timestamp="20190312 14:37:23.973" level="INFO">Executing : Row Count  |  select id from users where username = 'Mustaph' and password = md5('ml') </msg>
-<status status="PASS" starttime="20190312 14:37:23.973" endtime="20190312 14:37:23.973"></status>
+<msg timestamp="20190312 15:54:23.776" level="INFO">Executing : Row Count Is Equal To X  |  select id from users where username = 'TestUser' and password = md5('Testpassword')  |  1 </msg>
+<msg timestamp="20190312 15:54:23.776" level="INFO">Executing : Row Count  |  select id from users where username = 'TestUser' and password = md5('Testpassword') </msg>
+<status status="PASS" starttime="20190312 15:54:23.776" endtime="20190312 15:54:23.776"></status>
 </kw>
-<status status="PASS" starttime="20190312 14:37:23.905" endtime="20190312 14:37:23.973"></status>
+<status status="PASS" starttime="20190312 15:54:23.714" endtime="20190312 15:54:23.776"></status>
 </kw>
 <tags>
 <tag>Third</tag>
 </tags>
-<status status="PASS" starttime="20190312 14:37:23.904" endtime="20190312 14:37:23.973" critical="yes"></status>
+<status status="PASS" starttime="20190312 15:54:23.698" endtime="20190312 15:54:23.776" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20190312 14:37:23.454" endtime="20190312 14:37:23.973"></status>
+<status status="PASS" starttime="20190312 15:54:23.261" endtime="20190312 15:54:23.776"></status>
 </suite>
 <statistics>
 <total>

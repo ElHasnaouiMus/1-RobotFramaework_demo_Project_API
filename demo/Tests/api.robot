@@ -18,31 +18,32 @@ Resource  ../Ressources/LoginBack.robot
 
 Connecter un utilisateur
     [Tags]  First
-    LoginBack.Verifier Utilisateur Dans BD
-    LoginBack.Test Login Utilisateur Existant
+    LoginBack.Vérifier si l'utilisateur existe dans la base de donnée
+    LoginBack.Tester la connexion de l'utilisateur par un GET
 
 
 Connecter un utilisateur non existant dans la BD
     [Tags]  First
-    LoginBack.Supprimer Utilisateur De BD
-    LoginBack.Test Login Utilisateur Non Existant
+    LoginBack.Supprimer l'utilisateur de la BD
+    LoginBack.Tester la connexion de l'utilisateur non existant par une requete Http GET
 
 
 
 
 Inscrire un nouvel utilisateur
     [Tags]  Second
-    SignupBack.Utilisateur Non Existant BD
-    SignupBack.Requete Http POST
+    SignupBack.Vérifier si l'utilisateur n'existe pas dans la BD
+    SignupBack.Tester l'inscription de l'utilisateur par une requete Http POST
 
 Tester l'ajout du nouvel utilisateur dans la BD
     [Tags]  Second
-    SignupBack.Ajout Utilisateur dans la BD
+    SignupBack.Vérifier que l'utilisateur est ajoute dans la BD
 
 Inscrire un utilisateur deja present dans la BD
     [Tags]  Third
-    SignupBack.Requete POST Utilisateur dupliqué
-    SignupBack.Test Utilisateur non duplique BD
+    SignupBack.Tester l'inscription du meme utilisateur par une requete Http POST
+    SignupBack.Verifier que l'utilisateur n'est pas duplique dans la BD
+
 
 
 
