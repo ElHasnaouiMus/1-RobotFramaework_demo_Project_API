@@ -5,12 +5,12 @@ Library  DatabaseLibrary
 Resource  variables.robot
 
 *** Keywords ***
-Utilisateur Non Existant BD
+Vérifier si l'utilisateur n'existe pas dans la BD
     Connect To Database Using Custom Params  pymysql  database='demo', user='root', password='', host='localhost'
 
     Row Count Is 0	select id from users where username = '${username}' and password = md5('${password}')
 
-Requete Http POST
+Tester l'inscription de l'utilisateur par une requete Http POST
     Create Session  session2  ${website_link}
 
     &{data} =   Create Dictionary  username=${username}  password=${password}
@@ -29,13 +29,13 @@ Requete Http POST
 
 #    Log  ${json}
 
-Ajout Utilisateur dans la BD
+Vérifier que l'utilisateur est ajoute dans la BD
     Connect To Database Using Custom Params  pymysql  database='demo', user='root', password='', host='localhost'
 
     Row Count Is Equal To X	 select id from users where username = '${username}' and password = md5('${password}')   1
 
 
-Requete POST Utilisateur dupliqué
+Tester l'inscription du meme utilisateur par une requete Http POST
     Create Session  session2  ${website_link}
 
     &{data} =   Create Dictionary  username=${username}  password=${password}
@@ -51,7 +51,7 @@ Requete POST Utilisateur dupliqué
     Should Be Equal As Strings  ${json['message']}  Username already exists!
 
 
-Test Utilisateur non duplique BD
+Verifier que l'utilisateur n'est pas duplique dans la BD
     Connect To Database Using Custom Params  pymysql  database='demo', user='root', password='', host='localhost'
 
     Row Count Is Equal To X	 select id from users where username = '${username}' and password = md5('${password}')   1

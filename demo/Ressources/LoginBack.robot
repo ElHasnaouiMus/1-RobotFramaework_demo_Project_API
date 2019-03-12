@@ -6,7 +6,7 @@ Resource  variables.robot
 *** Variables ***
 
 *** Keywords ***
-Test Login Utilisateur Existant
+Tester la connexion de l'utilisateur par un GET
 
     Create Session  session1  ${website_link}
 
@@ -20,7 +20,7 @@ Test Login Utilisateur Existant
 
     Should Be Equal As Strings  ${json['message']}  Successfully Login!
 
-Verifier Utilisateur Dans BD
+Vérifier si l'utilisateur existe dans la base de donnée
 
     Connect To Database Using Custom Params  pymysql  database='demo', user='root', password='', host='localhost'
 
@@ -29,7 +29,7 @@ Verifier Utilisateur Dans BD
 #Trying to Login after the user have been deleted
 
 #We first delete the user
-Supprimer Utilisateur De BD
+Supprimer l'utilisateur de la BD
 
     Connect To Database Using Custom Params  pymysql  database='demo', user='root', password='', host='localhost'
 
@@ -38,7 +38,7 @@ Supprimer Utilisateur De BD
     Disconnect from Database
 
 #Then we try to Login
-Test Login Utilisateur Non Existant
+Tester la connexion de l'utilisateur non existant par une requete Http GET
 
     Create Session  session1  ${website_link}
 

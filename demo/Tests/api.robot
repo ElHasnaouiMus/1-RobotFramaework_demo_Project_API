@@ -16,13 +16,13 @@ Resource  ../Ressources/LoginBack.robot
 
 *** Test Cases ***
 
-Vérifier la connection au site web
+Connecter un utilisateur
     [Tags]  First
     LoginBack.Verifier Utilisateur Dans BD
     LoginBack.Test Login Utilisateur Existant
 
 
-Connexion apres suppression Utilisateur
+Connecter un utilisateur non existant dans la BD
     [Tags]  First
     LoginBack.Supprimer Utilisateur De BD
     LoginBack.Test Login Utilisateur Non Existant
@@ -30,16 +30,16 @@ Connexion apres suppression Utilisateur
 
 
 
-Vérifier la requete POST
+Inscrire un nouvel utilisateur
     [Tags]  Second
     SignupBack.Utilisateur Non Existant BD
     SignupBack.Requete Http POST
 
-Ajout de Utilisateur dans la BD
+Tester l'ajout du nouvel utilisateur dans la BD
     [Tags]  Second
     SignupBack.Ajout Utilisateur dans la BD
 
-Tester Duplication
+Inscrire un utilisateur deja present dans la BD
     [Tags]  Third
     SignupBack.Requete POST Utilisateur dupliqué
     SignupBack.Test Utilisateur non duplique BD
