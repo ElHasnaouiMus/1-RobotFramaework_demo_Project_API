@@ -3,7 +3,6 @@
 Library  SeleniumLibrary
 Resource  ../Ressources/SignupBack.robot
 Resource  ../Ressources/variables.robot
-Resource  ../Ressources/already_exist.robot
 Resource  ../Ressources/LoginBack.robot
 #Suite Setup  open browser  http://localhost/demo/    gc
 #Suite Teardown  close browser
