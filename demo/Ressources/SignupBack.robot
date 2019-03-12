@@ -13,7 +13,7 @@ Verify User Not In Database
 Verify Post Request
     Create Session  session2  ${website_link}
 
-    &{data} =   Create Dictionary  username=${username}  password=md5('${password}')
+    &{data} =   Create Dictionary  username=${username}  password=${password}
 
     &{headers}=  Create Dictionary  Content-Type=application/x-www-form-urlencoded
 
@@ -24,3 +24,8 @@ Verify Post Request
 #    ${json}=  To Json  ${response.content}
 
 #    Log  ${json}
+
+Verify User Added Successfully To Database
+    Connect To Database Using Custom Params  pymysql  database='demo', user='root', password='', host='localhost'
+
+    Row Count Is Equal To X	 select id from users where username = '${username}' and password = md5('${password}')   1

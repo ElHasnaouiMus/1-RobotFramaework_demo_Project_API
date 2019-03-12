@@ -1,7 +1,7 @@
 *** Settings ***
 
 Library  SeleniumLibrary
-Resource  ../Ressources/signup.robot
+Resource  ../Ressources/SignupBack.robot
 Resource  ../Ressources/variables.robot
 Resource  ../Ressources/already_exist.robot
 Resource  ../Ressources/LoginBack.robot
@@ -18,31 +18,30 @@ Resource  ../Ressources/LoginBack.robot
 *** Test Cases ***
 
 Vérifier la connection au site web
+    [Tags]  First
     LoginBack.Verify Successfull Login Request
 
 Vérifier l'existence du nom d'utilisateur et mot de passe
+    [Tags]  First
     LoginBack.Verify Successfull Login DataBase
 
-#Inscrire un utilisateu
-#    signup.Vérifier qu'il n'existe pas dans la base de donnée
-#    signup.Remplir le formulaire d'inscription
-#    signup.Vérifier si il'est ajouté dans le status dans JSON
-#    signup.Vérifier si il'est ajouté sur la base de données
-#
-#Connecter l'utilisateur inscri
-#    login.conecter l'utilisateur de test
-#
-#Ce nom d'utilisateur existe déjà!
-#    go to  http://localhost/demo/
-#    already_exist.Vérifier qu'il existe déja dans la base de donnée
-#    already_exist.Remplir le formulaire d'inscription
-#    already_exist.Vérifier que ça donne déja inscri dans le status JSON
-#    Vérifier qu'il est déjà ajouté dans la base de donnée
-#
-#Supprimer l'utilisateur de test
-#    [Tags]  deleteuser
-#    Suprimmer l'utilisateur de test depuis la base de donnée
-#
-##nom utilisateur ou mot de passe incorrect
-##    ${resp}=	Get Request	demo  /user/login.php?username=${username}&password=${password}
-##    Dictionary Should Contain Value	${resp.json()}	Invalid Username or Password!
+Vérifier connexion apres suppression du User
+    [Tags]  First
+    LoginBack.Delete User From DataBase
+    LoginBack.Verify Login Request After Delete
+
+
+
+Vérifier l'existence du user dans la BD
+    [Tags]  Second
+    SignupBack.Verify User Not In Database
+
+Vérifier la requete POST
+    [Tags]  Second
+    SignupBack.Verify Post Request
+
+Vérifier la BD
+    [Tags]  Second
+    SignupBack.Verify User Added Successfully To Database
+
+
