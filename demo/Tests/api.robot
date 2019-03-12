@@ -23,7 +23,7 @@ Connecter un utilisateur
 
 
 Connecter un utilisateur non existant dans la BD
-    [Tags]  First
+    [Tags]  Second
     LoginBack.Supprimer l'utilisateur de la BD
     LoginBack.Tester la connexion de l'utilisateur non existant par une requete Http GET
 
@@ -31,16 +31,14 @@ Connecter un utilisateur non existant dans la BD
 
 
 Inscrire un nouvel utilisateur
-    [Tags]  Second
+    [Tags]  Third
     SignupBack.Vérifier si l'utilisateur n'existe pas dans la BD
     SignupBack.Tester l'inscription de l'utilisateur par une requete Http POST
-
-Tester l'ajout du nouvel utilisateur dans la BD
-    [Tags]  Second
     SignupBack.Vérifier que l'utilisateur est ajoute dans la BD
 
+
 Inscrire un utilisateur deja present dans la BD
-    [Tags]  Third
+    [Tags]  Fourth
     SignupBack.Tester l'inscription du meme utilisateur par une requete Http POST
     SignupBack.Verifier que l'utilisateur n'est pas duplique dans la BD
 
