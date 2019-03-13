@@ -1,9 +1,7 @@
 *** Settings ***
 Resource    variables.robot
-*** Variables ***
 
 *** Keywords ***
-
 Remplir le formulaire avec les coordonnées de test
     Input Text    ${champ_username_login}    ${username}
     Input Text    ${champ_password_login}    ${password}

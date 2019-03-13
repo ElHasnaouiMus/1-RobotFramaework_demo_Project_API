@@ -10,7 +10,6 @@ Test Setup  go to  http://localhost/demo/
 Suite Teardown  close browser
 
 *** Test Cases ***
-
 Inscrire un utilisateur
     SignupBack.Vérifier si l'utilisateur n'existe pas dans la BD
     ihm_signup.Cliquez sur le champ sign up
