@@ -38,4 +38,4 @@ Connecter un utilisateur invalide
     ihm_login.Remplir le formulaire avec les coordonnées de test
     ihm_login.clicker sur le button sign in
     ihm_login.Vérifier que "Invalid Username or Password!" est affiché dans le status
-    626262
+    6262625
