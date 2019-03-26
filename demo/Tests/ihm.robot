@@ -19,7 +19,6 @@ Inscrire un utilisateur
     ihm_signup.Cliquez sur le button sign up
     ihm_signup.Vérifier que "Successfully Signup!" est affiché dans le status
     SignupBack.Vérifier que l'utilisateur est ajoute dans la BD
-    knkn
 Réinscrire encore une fois le mème utilisateur
     [Timeout]  1min
     SignupBack.vérifier que l'utilisateur est ajoute dans la BD
@@ -28,7 +27,6 @@ Réinscrire encore une fois le mème utilisateur
     ihm_signup.Cliquez sur le button sign up
     ihm_signup.Vérifier que "Username already exists!" est affiché dans le status
     SignupBack.Verifier que l'utilisateur n'est pas duplique dans la BD
-    hhhhh
 Connecter l'utilisateur inscri
     ihm_login.Remplir le formulaire avec les coordonnées de test
     ihm_login.clicker sur le button sign in
@@ -38,4 +36,3 @@ Connecter un utilisateur invalide
     ihm_login.Remplir le formulaire avec les coordonnées de test
     ihm_login.clicker sur le button sign in
     ihm_login.Vérifier que "Invalid Username or Password!" est affiché dans le status
-    6262625
